@@ -1,0 +1,202 @@
+<!--TWO WAY BINDING-->
+          <!--[(ngModel)]-->
+          <!--FormsModule in the app.module.ts-->
+          <!-- <input type="text" [(ngModel)]="name"><span>Welcome {{name}}</span> -->
+
+<!--IMAGE CAROUSEL-->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="https://www.bakingbusiness.com/ext/resources/FBN-Features/8/WalmartGrocery_Lead.jpg?t=1534519219&width=1080"  class="d-block w-100" alt="css">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 [ngClass]="prod_array">Walmart Shopping zone</h5>
+          <p [ngStyle]="{color:mycolor}">Grocery</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo98P50WNKnwTmzyU7MDOtyDpCIBUIzkGkpA&usqp=CAU" class="d-block w-100" alt="JS">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 [ngClass]="prod_array">Walmart Dairy zone</h5>
+          <p [ngStyle]="{color:mycolor}">Variety of milks</p>
+        </div>
+      </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+  <br>
+
+
+ <!--Cards-->
+ <div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:left; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top:10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:center; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top: 10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:right; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top: 10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!--TWO WAY BINDING-->
+  Enter the Color for Carousel Contents:  <input [(ngModel)]="mycolor" type="text" style="border-radius:10px;">
+  <br>
+  <br>
+  <!--*ngFor to retrieve the contents from products-->
+  <!--*ngIf in the <ul> for toggle effct - hide/show the contents-->
+  <ul *ngIf="isVisible">
+    <!--Access the class products with ngClass-->
+    <!--Property Binding-->
+    <li *ngFor="let product of Products" [ngClass]="prod">
+        {{product.productname}}
+    </li>
+  </ul>
+  <!--Event to hide product details-->
+  <button (click)="hide_products()" [style.background-color]="mycolor">Hide the Product details</button>
+  <!--*ngSwitch for Product-->
+  <!--Property Binding-->
+  <br>
+  <br>
+  <ul [ngSwitch]="product"> 
+    <li *ngSwitchCase="'Kids Dress'">Kids Dress</li>
+    <li *ngSwitchCase="'Girls Dress'">Girls Dress</li>
+    <li *ngSwitchCase="'Boys Dress'">Boys Dress</li>
+    <li *ngSwitchCase="'Grocery'">Make-Up Kits for Girls</li>
+    <li *ngSwitchCase="'Grocery'">Perfumes for Boys</li>
+    <li *ngSwitchCase="'Grocery'">Grocery</li>
+    <li *ngSwitchCase="'Grocery'">Vegetables</li>
+    <li *ngSwitchCase="'Grocery'">Fruits</li>
+    <li *ngSwitchCase="'Grocery'">Dairy</li>
+    <li *ngSwitchDefault>Not Found</li>
+  </ul>
+  <hr>
+  <!--STYLE BINDING-->
+<p [style.color]="'black'" [style.font-size.px]="'24'" [style.background-color]="'orange'">Orange Color</p>
+<p [style.background-color]="'green'"> Green Color</p>
+<p [style.font-size.px]="'24'">Stores</p>
+<p class="stylebinding1">Class Binding</p>
+<hr>
+<!--TERNARY OPERATOR FOR STYLE BINDING-->
+<button [style.color]="errorcolor=='blue'?'red':'blue'">STYLE BINDING USING TERNARY </button>
+<hr>
+<!--Access the ProductDetails *ngFor and *ngSwitchCase-->
+<!--red,green,yellow classes are created in the component.css-->
+<ul *ngFor="let pdetails of ProductDetails" [ngSwitch]="pdetails.color">
+  <li *ngSwitchCase="'green'" class="green">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+  <li *ngSwitchCase="'red'" class="red">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+  <li *ngSwitchDefault class="Orange">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+</ul>
+<hr>
+<!--Bootstrap contextual classes(eg text-success)-->
+<!--PIPES-->
+<ul *ngFor="let pdetails of ProductDetails" [ngSwitch]="pdetails.status">
+  <li *ngSwitchCase="'Active'" class="text-success">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status | uppercase}}
+  </li>
+  <li *ngSwitchCase="'InActive'" class="text-danger">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status | lowercase}}
+  </li>
+  <li *ngSwitchDefault class="text-warning">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+</ul>
+<hr>
+<!--binding style through function-->
+<p [style.color]="getColor()">"Good Bye"</p>
+<hr>
+<!--PRE-DEFINED PIPES-->
+<!--DATE PIPE-->
+
+Today's Date : {{date_today}}
+<br>
+Today's Date : {{date_today | date }}
+<br>
+Today's Date : {{date_today | date | uppercase}}
+<br>
+Today's Date : {{date_today | date:'short' | uppercase}}
+<br>
+Today's Date : {{date_today | date:'long' | uppercase}}
+<hr>
+<!--Other Pipes-->
+<br>
+Price: {{price}}
+<br>
+Price: {{price | currency:'USD'}}
+<br>
+Price: {{price | currency:'INR'}}
+<hr>
+
