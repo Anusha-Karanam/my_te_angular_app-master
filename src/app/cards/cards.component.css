@@ -1,8 +1,5 @@
-img {
-    height: 500px;
-  }
-  /*access the style through class attribute*/
-  .stylebinding1 {
-    color: red;
-    background-color: beige;
-  }
+marquee{
+  text-shadow:2px 3px 3px rgba(11, 220, 4, 0.724);
+  color:rgb(5, 5, 5);
+  font-size: 30px;
+}

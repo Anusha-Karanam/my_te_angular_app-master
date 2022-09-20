@@ -9,6 +9,18 @@ import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './cards/cards.component';
 import { SearchComponent } from './search/search.component';
 import { SquarePipe } from './square.pipe';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
+import { AllproductsComponent } from './allproducts/allproducts.component';
+import { ToysComponent } from './toys/toys.component';
+import { ToysdealsComponent } from './toysdeals/toysdeals.component';
+import { DealsComponent } from './deals/deals.component';
+//import { WalmartdealsComponent } from './deals/walmartdeals/walmartdeals.component';
+import { CounterComponent } from './counter/counter.component';
+import { CounterchildComponent } from './counter/counterchild/counterchild.component';
+//import { WalmartdealsComponent } from './deals/walmartdeals/walmartdeals.component';
+//import { MicrovenComponent } from './microven/microven.component';
+//import { RefrigeratorComponent } from './refrigerator/refrigerator.component';
+//import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +29,24 @@ import { SquarePipe } from './square.pipe';
     HomeComponent,
     CardsComponent,
     SearchComponent,
-    SquarePipe
+    SquarePipe,
+    AdvertisementComponent,
+    AllproductsComponent,
+    ToysComponent,
+    ToysdealsComponent,
+    DealsComponent,
+    //WalmartdealsComponent,
+    CounterComponent,
+    CounterchildComponent,
+    //WalmartdealsComponent,
+    //MicrovenComponent,
+    //RefrigeratorComponent,
+    //RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
