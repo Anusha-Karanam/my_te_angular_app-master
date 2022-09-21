@@ -11,9 +11,11 @@ export class CounterchildComponent implements OnInit {
    countLessThenOne=true;
    
    @Output() countEmmitter =new EventEmitter(); //4
+   @Output() quantityEmitter = new EventEmitter();
  
-   PostValue(){
+   PostData(){
      this.countEmmitter.emit(this.counterValue);//4
+     this.quantityEmitter.emit(this.counterValue);
    }
    //increment and decrement 
 
@@ -27,13 +29,13 @@ export class CounterchildComponent implements OnInit {
       this.countLessThenOne=true;
       this.counterValue--;
     }
-    this.PostValue();
+    this.PostData();
   }
 
   increment(){
     this.counterValue++;
     this.countLessThenOne=true;
-    this.PostValue();
+    this.PostData();
   }
 
   constructor() { }
