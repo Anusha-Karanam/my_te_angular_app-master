@@ -1,20 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import  * as  td from "../toys/toys.json";
-
+import * as allprod from "../data/allproducts.json";
+//import contact service and class
+import { Contact } from '../contact';
+import { ContactService } from '../contact.service'
 @Component({
-  selector: 'app-toysdeals',
-  templateUrl: './toysdeals.component.html',
-  styleUrls: ['./toysdeals.component.css']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class ToysdealsComponent implements OnInit {
-
-  constructor() { }
+export class ContactComponent implements OnInit {
+  cont: Contact[]=[];
+  //constructor injection of the ContactService
+  constructor(private contservice:ContactService) { }
+ 
 
   ngOnInit(): void {
+    const contObservable= this.contservice.getContactDetails();
+    contObservable.subscribe((contData: Contact[])=>{
+      this.cont=contData;
+    });
   }
-  //Fetch the data from washingmachine.json using the alias washingmachine in line nnumber 4
-  toys:any=(td as any).default;
-
+ 
   //Toggle effect to show and hide the pdescription and price
   //Property for toggle effect
   productDetail=false;
@@ -35,4 +41,6 @@ export class ToysdealsComponent implements OnInit {
     }
     return content;
   }
+
+
 }

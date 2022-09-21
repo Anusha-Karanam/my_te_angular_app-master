@@ -12,15 +12,15 @@ import { SquarePipe } from './square.pipe';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
 import { AllproductsComponent } from './allproducts/allproducts.component';
 import { ToysComponent } from './toys/toys.component';
-import { ToysdealsComponent } from './toysdeals/toysdeals.component';
+import { ToysdealsComponent } from './toys/toysdeals/toysdeals.component';
 import { DealsComponent } from './deals/deals.component';
-//import { WalmartdealsComponent } from './deals/walmartdeals/walmartdeals.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterchildComponent } from './counter/counterchild/counterchild.component';
-//import { WalmartdealsComponent } from './deals/walmartdeals/walmartdeals.component';
-//import { MicrovenComponent } from './microven/microven.component';
-//import { RefrigeratorComponent } from './refrigerator/refrigerator.component';
-//import { RegisterComponent } from './register/register.component';
+import { ContactComponent } from './contact/contact.component';
+import { WalmartdealsComponent } from './deals/walmartdeals/walmartdeals.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,13 +35,14 @@ import { CounterchildComponent } from './counter/counterchild/counterchild.compo
     ToysComponent,
     ToysdealsComponent,
     DealsComponent,
-    //WalmartdealsComponent,
     CounterComponent,
     CounterchildComponent,
-    //WalmartdealsComponent,
-    //MicrovenComponent,
-    //RefrigeratorComponent,
-    //RegisterComponent
+   ContactComponent,
+   WalmartdealsComponent,
+   ProductdetailsComponent,
+    
+   
+    
   ],
   imports: [
     BrowserModule,

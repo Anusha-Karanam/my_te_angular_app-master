@@ -1,0 +1,41 @@
+<!--fetch all the records from fridge property in the .ts file which is accessing the refrigerator.json-->
+<h1>"Contact details of Employees working in Walmart"</h1>
+ <div class="card col-lg-6" style="border:none;margin-top: 30px ;margin-left:280px;">
+    <!-- <app-deals [product]="productItem" *ngFor="let productItem of all"></app-deals> -->
+    <div class="card-body col-lg-12">
+        <div class="row" style="margin-top:10px;border-style:solid;border-color:black;border-radius:15px;"
+            *ngFor="let c of cont">
+            <div class="col-lg-3">
+                <!--Property Binding-->
+                <img [src]="c.img">
+            </div>
+            <div class="col-lg-9" style="margin-top:20px;">
+                <!--Interpolation Binding-->
+                <div>
+                    Employee name: {{ c.ename | uppercase}}
+                    <span (click)="showproductDetailsToggle()" [ngClass]="toggleContent()"></span>
+                </div>
+                <hr>
+                <div [hidden]="productDetail">
+                    Employee Id: {{c.empid}}
+                    <br>
+                    Employee Designation: {{c.edesignation}}
+                    <br>
+
+                  
+                    Phone Num: {{ c.ephone }}
+                    <br>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--3rd column-->
+<div class="col col-lg-3">
+    
+<div class="col col-lg-3" *ngFor="let c of cont">
+    <!--Property Binding-->
+   
+</div>
+</div>
