@@ -11,12 +11,16 @@
 
         <!--2nd column-->
         <div class="card col-lg-6" style="border:none;margin-top: 30px;">
-            <app-toysdeals></app-toysdeals>
+            <app-toysdeals><br><input type="number" name="quantity" [(ngModel)]="quantity" style="width:50px;border-radius:10px;" min="1" max="25">
+                Quantity: 
+                <br>
+                <button class="btn btn-dark m-3" (click)="addToCart(product)" style="width:150px;border-radius:10px;">Add to Cart</button></app-toysdeals>
         </div>
         <!--3rd column-->
         <div class="col col-lg-3">
             <app-advertisement></app-advertisement>
             <app-advertisement></app-advertisement>
+            
         </div>
     </div>
 </div>

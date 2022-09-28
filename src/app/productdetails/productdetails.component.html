@@ -1,1 +1,130 @@
-<p>productdetails works!</p>
+<marquee>"Walmart Brand Collection"</marquee>
+   <!--TWO WAY BINDING-->
+  <!--Enter the Color for Carousel Contents:  <input [(ngModel)]="mycolor" type="text" style="border-radius:10px;">-->
+  <!--<br>-->
+  <!--<br> -->
+
+ <!--Cards-->
+ <div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:left; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top:10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:center; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top: 10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngFor="let p of ProductDetails" style="margin-top: 40px;"  >
+  <div class="row" style="float:right; ">
+  <div class="col col-3 col-sm-6 col-md-4"  style="padding:100px;padding-top: 10px;">
+      <div class="card" style="width: 18rem;">
+        <img class="card_img" style="height: 100px; width: 100px;" [src]="p.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{p.pname}}</h6>
+          <p class="card-text">{{p.pdescription}}</p>
+          <div class="alert alert-success" role="alert">
+              In Stock!
+            </div>
+          <!-- Button trigger modal -->
+          <button style="margin-left:10px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Buy now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!--TERNARY OPERATOR FOR STYLE BINDING-->
+ <button [style.color]="errorcolor=='blue'?'red':'blue'">STYLE BINDING USING TERNARY </button>
+<hr> 
+<!--Access the ProductDetails *ngFor and *ngSwitchCase-->
+<!--red,green,yellow classes are created in the component.css-->
+<ul *ngFor="let pdetails of ProductDetails" [ngSwitch]="pdetails.color">
+  <li *ngSwitchCase="'green'" class="green">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+  <li *ngSwitchCase="'red'" class="red">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+  <li *ngSwitchDefault class="yellow">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+</ul>
+<hr> 
+<!--Bootstrap contextual classes(eg text-success)-->
+<!--PIPES-->
+<ul *ngFor="let pdetails of ProductDetails" [ngSwitch]="pdetails.status">
+  <li *ngSwitchCase="'Active'" class="text-success">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status | uppercase}}
+  </li>
+  <li *ngSwitchCase="'InActive'" class="text-danger">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status | lowercase}}
+  </li>
+  <li *ngSwitchDefault class="text-warning">
+    {{pdetails.pid}} - {{pdetails.pname}} - {{pdetails.status}}
+  </li>
+</ul>
+<hr> 
+<!--binding style through function-->
+ <p [style.color]="getColor()">Hello</p>
+<hr> 
+<!--PRE-DEFINED PIPES-->
+<!--DATE PIPE-->
+
+ Today's Date : {{date_today}}
+<br>
+Today's Date : {{date_today | date }}
+<br>
+Today's Date : {{date_today | date | uppercase}}
+<br>
+Today's Date : {{date_today | date:'short' | uppercase}}
+<br>
+Today's Date : {{date_today | date:'long' | uppercase}}
+<hr> 
+<!--Other Pipes-->
+ <br>
+Price: {{price}}
+<br>
+Price: {{price | currency:'INR'}}
+<br>
+Price: {{price | currency:'USD'}}
+<hr> 
+<!--CUSTOM PIPES - USER-DEFINED PIPES-->
+<!--ng g pipe square-->
+<!--square-->
+ Calculate Square of 4: {{ 4 | square}} 

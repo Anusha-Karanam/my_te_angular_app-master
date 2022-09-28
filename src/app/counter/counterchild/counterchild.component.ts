@@ -1,4 +1,4 @@
-import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-counterchild',
@@ -6,15 +6,16 @@ import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
   styleUrls: ['./counterchild.component.css']
 })
 export class CounterchildComponent implements OnInit {
+@Input() counterValue:number=1;
    //counter property
-   counterValue=1;
+   //counterValue:number=1;
    countLessThenOne=true;
    
-   @Output() countEmmitter =new EventEmitter(); //4
+   @Output() countEmitter =new EventEmitter(); //4
    @Output() quantityEmitter = new EventEmitter();
  
    PostData(){
-     this.countEmmitter.emit(this.counterValue);//4
+     this.countEmitter.emit(this.counterValue);//4
      this.quantityEmitter.emit(this.counterValue);
    }
    //increment and decrement 
