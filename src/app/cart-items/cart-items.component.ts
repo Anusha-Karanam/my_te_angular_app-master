@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class CartItemsComponent implements OnInit {
 
   
-   quanties: number = 0;
+   //quanties: number = 0;
   //constructor injection
   constructor(private cartSvc: CartService, private router:Router) { }
   //Cart List
