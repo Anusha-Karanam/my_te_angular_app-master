@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 //Add to cart cart-items
 import { Cartitem } from '../cartitem';
